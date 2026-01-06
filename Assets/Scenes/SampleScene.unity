@@ -353,6 +353,7 @@ GameObject:
   - component: {fileID: 677733035}
   - component: {fileID: 677733039}
   - component: {fileID: 677733038}
+  - component: {fileID: 677733040}
   m_Layer: 0
   m_Name: Bird
   m_TagString: Untagged
@@ -473,7 +474,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2389797eb1546b849802f19baca213ba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  myRigidbody: {fileID: 677733035}
+  rb: {fileID: 677733035}
+  jump: {fileID: 1445874890}
 --- !u!58 &677733039
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -510,6 +512,50 @@ CircleCollider2D:
   m_CompositeOrder: 0
   m_Offset: {x: -0.11, y: -0.47}
   m_Radius: 1.87
+--- !u!114 &677733040
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 677733034}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.InputSystem::UnityEngine.InputSystem.PlayerInput
+  m_Actions: {fileID: -944628639613478452, guid: 75307d45c646f564db3d2da281cc2c3e, type: 3}
+  m_NotificationBehavior: 0
+  m_UIInputModule: {fileID: 0}
+  m_DeviceLostEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_DeviceRegainedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ControlsChangedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ActionEvents: []
+  m_NeverAutoSwitchControlSchemes: 0
+  m_DefaultControlScheme: Keyboard
+  m_DefaultActionMap: Gameplay
+  m_SplitScreenIndex: -1
+  m_Camera: {fileID: 0}
+--- !u!114 &1445874890
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fc1515ab76e54f068e2f2207940fab32, type: 3}
+  m_Name: Gameplay/Jump
+  m_EditorClassIdentifier: Unity.InputSystem::UnityEngine.InputSystem.InputActionReference
+  m_Asset: {fileID: -944628639613478452, guid: 75307d45c646f564db3d2da281cc2c3e, type: 3}
+  m_ActionId: 913d8e7e-3ad5-44bd-9130-a6632f291a2a
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
