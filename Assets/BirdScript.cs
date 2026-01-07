@@ -5,6 +5,7 @@ public class BirdScript : MonoBehaviour
     //makes the script aware of the Rigidbody2D component attached to the bird game object
     public Rigidbody2D rb;
 
+    public float flapStrength;
 
     void Start()
     {
@@ -17,7 +18,7 @@ public class BirdScript : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space) == true) //deprecated
         {
             //sets the vertical velocity of the bird to 10 units per second upwards
-            rb.linearVelocity = Vector2.up * 10f;
+            rb.linearVelocity = Vector2.up * flapStrength;
         }
     }
 
