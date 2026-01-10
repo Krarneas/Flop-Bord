@@ -11,7 +11,6 @@ public class BirdScript : MonoBehaviour
 
     //SFX
     public AudioSource flapSFX;
-    public AudioSource dieSFX;
 
     void Start()
     {
@@ -26,7 +25,7 @@ public class BirdScript : MonoBehaviour
         {
             //sets the vertical velocity of the bird to 10 units per second upwards
             rb.linearVelocity = Vector2.up * flapStrength;
-            flapSFX.Play();
+            flapSFX.PlayOneShot(flapSFX.clip);
         }
 
         //bird goes offscreen, trigger game over
@@ -34,7 +33,6 @@ public class BirdScript : MonoBehaviour
         {
             logic.gameOver();
             birdIsAlive = false;
-            dieSFX.Play();
         }
     }
 
@@ -44,7 +42,6 @@ public class BirdScript : MonoBehaviour
         logic.gameOver();
         //stop controls
         birdIsAlive = false;
-        dieSFX.Play();
     }
 }
 

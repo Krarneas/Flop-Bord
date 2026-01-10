@@ -10,7 +10,8 @@ public class LogicScript : MonoBehaviour
 
     //SFX
     public AudioSource dingSFX;
-
+    public AudioSource dieSFX;
+    private bool gameOverSFXPlayed = false;
 
     //logic for adding score
     [ContextMenu("Increase Score")] //comes in handy for testing in the editor
@@ -28,6 +29,12 @@ public class LogicScript : MonoBehaviour
 
     public void gameOver()
     {
+
+        if (gameOverSFXPlayed) return; //prevent multiple plays
+
+        gameOverSFXPlayed = true;
         gameOverScreen.SetActive(true);
+
+        dieSFX.Play();
     }
 }

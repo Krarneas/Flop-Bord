@@ -18,6 +18,7 @@ public class PipeMiddleScript : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        
         //BUG FIX: stop adding score if game over
         if (!logic.gameOverScreen.activeInHierarchy)
         {
