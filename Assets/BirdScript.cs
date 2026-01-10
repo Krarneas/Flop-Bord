@@ -6,6 +6,7 @@ public class BirdScript : MonoBehaviour
     public Rigidbody2D rb;
     public LogicScript logic;
     public float flapStrength;
+    public float outOfBoundsY;
     public bool birdIsAlive = true;
 
     void Start()
@@ -21,6 +22,13 @@ public class BirdScript : MonoBehaviour
         {
             //sets the vertical velocity of the bird to 10 units per second upwards
             rb.linearVelocity = Vector2.up * flapStrength;
+        }
+
+        //bird goes offscreen, trigger game over
+        if (transform.position.y > outOfBoundsY || transform.position.y < -(outOfBoundsY)) //position y limits
+        {
+            logic.gameOver();
+            birdIsAlive = false;
         }
     }
 
