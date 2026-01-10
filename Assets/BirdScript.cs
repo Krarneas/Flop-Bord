@@ -18,7 +18,7 @@ public class BirdScript : MonoBehaviour
     void Update()
     {
         //when space is pressed do:
-        if (Input.GetKeyDown(KeyCode.Space) && birdIsAlive) //deprecated
+        if (Input.GetKeyDown(KeyCode.Space) && birdIsAlive) //deprecated but much easier to use
         {
             //sets the vertical velocity of the bird to 10 units per second upwards
             rb.linearVelocity = Vector2.up * flapStrength;

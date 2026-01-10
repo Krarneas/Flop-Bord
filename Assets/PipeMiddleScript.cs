@@ -18,10 +18,14 @@ public class PipeMiddleScript : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        //if the object that entered the trigger is the bird
-        if (collision.gameObject.layer == 3)
+        //BUG FIX: stop adding score if game over
+        if (!logic.gameOverScreen.activeInHierarchy)
         {
-            logic.addScore(1);
+            //if the object that entered the trigger is the bird
+            if (collision.gameObject.layer == 3)
+            {
+                logic.addScore(1);
+            }
         }
     }
 }
