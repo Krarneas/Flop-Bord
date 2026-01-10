@@ -8,7 +8,7 @@ public class LogicScript : MonoBehaviour
 
     //logic for adding score
     [ContextMenu("Increase Score")] //comes in handy for testing in the editor
-    void addScore()
+    public void addScore()
     {
         playerScore += 1;
         scoreText.text = playerScore.ToString();    
