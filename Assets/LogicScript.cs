@@ -8,12 +8,17 @@ public class LogicScript : MonoBehaviour
     public Text scoreText;
     public GameObject gameOverScreen;
 
+    //SFX
+    public AudioSource dingSFX;
+
+
     //logic for adding score
     [ContextMenu("Increase Score")] //comes in handy for testing in the editor
     public void addScore(int scoreToAdd)
     {
         playerScore += scoreToAdd;
-        scoreText.text = playerScore.ToString();    
+        scoreText.text = playerScore.ToString();   
+        dingSFX.Play();
     }
 
     public void resetGame()
